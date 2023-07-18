@@ -2,6 +2,14 @@ library melo_ui;
 
 /* WIDGETS */
 export 'src/widgets/meloui_button.dart';
+export 'src/widgets/meloui_snackbar.dart';
+export 'src/widgets/meloui_card.dart';
+export 'src/widgets/meloui_dropdown.dart';
+export 'src/widgets/meloui_menu_item.dart';
+export 'src/widgets/meloui_text.dart';
+export 'src/widgets/meloui_text_field.dart';
+export 'src/widgets/meloui_text_form_field.dart';
+export 'src/widgets/meloui_textarea.dart';
 /* PAGES */
 export 'src/pages/meloui_signin_page.dart';
 /* UTILS */
