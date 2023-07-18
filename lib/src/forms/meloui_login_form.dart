@@ -11,12 +11,14 @@ class MeloUILoginForm extends StatelessWidget {
       required this.emailController,
       required this.passwordController,
       this.isBusy = false,
+      this.isPermittedCreateAccount = true,
       required this.onRefresh,
       required this.onSubmit,
       required this.errors});
 
   final String title;
   final String subTitle;
+  final bool isPermittedCreateAccount;
   final bool isBusy;
   final TextEditingController emailController;
   final TextEditingController passwordController;
@@ -70,15 +72,16 @@ class MeloUILoginForm extends StatelessWidget {
               emailController.text.isEmpty || passwordController.text.isEmpty,
           isLoading: isBusy,
           onPressed: onSubmit),
-      Center(
-        child: TextButton(
-            onPressed: () => Navigator.pushNamed(context, '/terms'),
-            child: const Text(
-              "Ainda não tem conta? Crie uma agora!",
-              style: TextStyle(fontSize: 16),
-              textAlign: TextAlign.center,
-            )),
-      )
+      if (isPermittedCreateAccount)
+        Center(
+          child: TextButton(
+              onPressed: () => Navigator.pushNamed(context, '/terms'),
+              child: const Text(
+                "Ainda não tem conta? Crie uma agora!",
+                style: TextStyle(fontSize: 16),
+                textAlign: TextAlign.center,
+              )),
+        )
     ]);
   }
 }

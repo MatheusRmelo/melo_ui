@@ -3,9 +3,14 @@ import 'package:melo_ui/src/forms/meloui_login_form.dart';
 
 class MeloUISignPage extends StatefulWidget {
   const MeloUISignPage(
-      {super.key, required this.title, required this.subTitle, this.picture});
+      {super.key,
+      required this.title,
+      required this.subTitle,
+      this.isPermittedCreateAccount = true,
+      this.picture});
 
   final Widget? picture;
+  final bool isPermittedCreateAccount;
   final String title;
   final String subTitle;
   @override
@@ -40,6 +45,7 @@ class _MeloUISignPageState extends State<MeloUISignPage> {
                       subTitle: widget.subTitle,
                       passwordController: _passwordController,
                       emailController: _emailController,
+                      isPermittedCreateAccount: widget.isPermittedCreateAccount,
                       onSubmit: () {},
                       onRefresh: () {
                         setState(() {});
@@ -76,6 +82,8 @@ class _MeloUISignPageState extends State<MeloUISignPage> {
                             subTitle: widget.subTitle,
                             passwordController: _passwordController,
                             emailController: _emailController,
+                            isPermittedCreateAccount:
+                                widget.isPermittedCreateAccount,
                             onSubmit: () {},
                             onRefresh: () {
                               setState(() {});
