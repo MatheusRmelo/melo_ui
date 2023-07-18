@@ -42,11 +42,15 @@ class MeloUIButton extends StatelessWidget {
                         height: 24,
                         margin: const EdgeInsets.only(right: 8),
                         child: CircularProgressIndicator(
-                          color: Theme.of(context).primaryColorLight,
+                          color: Theme.of(context)
+                              .primaryColorLight
+                              .withOpacity(0.6),
                         )),
                     Text("Carregando...",
                         style: TextStyle(
-                            color: Theme.of(context).primaryColorLight))
+                            color: Theme.of(context)
+                                .primaryColorLight
+                                .withOpacity(0.6)))
                   ],
                 )
               : Row(
@@ -58,6 +62,7 @@ class MeloUIButton extends StatelessWidget {
                         child: Icon(
                           icon,
                           size: 24,
+                          color: textColor,
                         ),
                       ),
                     Text(

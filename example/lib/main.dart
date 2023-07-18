@@ -1,3 +1,4 @@
+import 'package:example/app_page.dart';
 import 'package:flutter/material.dart';
 import 'package:melo_ui/melo_ui.dart';
 
@@ -13,10 +14,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: MeloUITheme.generateTheme(),
-      home: MeloUISignPage(
-        title: 'Teste título',
-        subTitle: 'Teste subtitulo',
-      ),
+      home: AppPage(),
     );
   }
 }

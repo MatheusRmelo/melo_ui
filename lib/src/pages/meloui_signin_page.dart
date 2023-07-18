@@ -7,21 +7,25 @@ class MeloUISignPage extends StatefulWidget {
       required this.title,
       required this.subTitle,
       this.isPermittedCreateAccount = true,
-      this.picture});
+      this.picture,
+      this.isBusy = false,
+      required this.onSubmit,
+      required this.errors});
 
   final Widget? picture;
   final bool isPermittedCreateAccount;
   final String title;
   final String subTitle;
+  final bool isBusy;
+  final Map<String, List<String>> errors;
+  final void Function(String email, String password) onSubmit;
   @override
   State<MeloUISignPage> createState() => _MeloUISignPageState();
 }
 
 class _MeloUISignPageState extends State<MeloUISignPage> {
-  bool _isBusy = false;
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
-  Map<String, List<dynamic>> _errors = {};
 
   @override
   Widget build(BuildContext context) {
@@ -39,8 +43,8 @@ class _MeloUISignPageState extends State<MeloUISignPage> {
                 child: Padding(
                     padding: const EdgeInsets.all(32),
                     child: MeloUILoginForm(
-                      isBusy: _isBusy,
-                      errors: _errors,
+                      isBusy: widget.isBusy,
+                      errors: widget.errors,
                       title: widget.title,
                       subTitle: widget.subTitle,
                       passwordController: _passwordController,
@@ -76,15 +80,18 @@ class _MeloUISignPageState extends State<MeloUISignPage> {
                       child: Padding(
                           padding: const EdgeInsets.all(32),
                           child: MeloUILoginForm(
-                            isBusy: _isBusy,
-                            errors: _errors,
+                            isBusy: widget.isBusy,
+                            errors: widget.errors,
                             title: widget.title,
                             subTitle: widget.subTitle,
                             passwordController: _passwordController,
                             emailController: _emailController,
                             isPermittedCreateAccount:
                                 widget.isPermittedCreateAccount,
-                            onSubmit: () {},
+                            onSubmit: () {
+                              widget.onSubmit(_emailController.text,
+                                  _passwordController.text);
+                            },
                             onRefresh: () {
                               setState(() {});
                             },

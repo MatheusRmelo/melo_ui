@@ -22,7 +22,7 @@ class MeloUILoginForm extends StatelessWidget {
   final bool isBusy;
   final TextEditingController emailController;
   final TextEditingController passwordController;
-  final Map<String, List<dynamic>> errors;
+  final Map<String, List<String>> errors;
   final Function onRefresh;
   final void Function() onSubmit;
 
@@ -31,14 +31,14 @@ class MeloUILoginForm extends StatelessWidget {
     return Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
       MeloUIText(
         title,
-        style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
       ),
       const SizedBox(
         height: 8,
       ),
       MeloUIText(
         subTitle,
-        style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
+        style: const TextStyle(fontSize: 16, fontWeight: FontWeight.bold),
       ),
       const SizedBox(
         height: 24,
