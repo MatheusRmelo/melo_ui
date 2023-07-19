@@ -72,7 +72,7 @@ class _MeloUISignPageState extends State<MeloUISignPage> {
                 Padding(
                   padding: EdgeInsets.only(right: size.width * 0.05),
                   child: Container(
-                      width: size.width * 0.3,
+                      width: widget.picture == null ? 400 : size.width * 0.3,
                       margin: const EdgeInsets.symmetric(vertical: 64),
                       decoration: BoxDecoration(
                           color: Theme.of(context).colorScheme.secondary,
