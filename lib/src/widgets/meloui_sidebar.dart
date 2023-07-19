@@ -1,23 +1,28 @@
 import 'package:flutter/material.dart';
 import 'package:melo_ui/melo_ui.dart';
-import 'package:melo_ui/src/widgets/meloui_logo.dart';
+import 'package:melo_ui/src/models/meloui_nav_item_model.dart';
 
 class MeloUISidebar extends StatelessWidget {
-  const MeloUISidebar(
-      {super.key,
-      required this.logo,
-      this.menus,
-      this.actions,
-      this.width = 200,
-      this.height = double.infinity,
-      this.backgroundColor});
+  const MeloUISidebar({
+    super.key,
+    required this.logo,
+    this.active = 0,
+    this.onNavigateTo,
+    this.menus,
+    this.actions,
+    this.width = 200,
+    this.height = double.infinity,
+    this.backgroundColor,
+  });
 
   final double width;
   final double height;
+  final int active;
   final Color? backgroundColor;
   final MeloUILogo logo;
-  final List<Widget>? menus;
+  final List<MeloUINavItemModel>? menus;
   final List<Widget>? actions;
+  final void Function(int page)? onNavigateTo;
 
   @override
   Widget build(BuildContext context) {
@@ -37,10 +42,17 @@ class MeloUISidebar extends StatelessWidget {
         ),
         Expanded(
             flex: 5,
-            child: menus == null
+            child: menus == null && onNavigateTo != null
                 ? Container()
-                : ListView(
-                    children: menus!,
+                : ListView.builder(
+                    itemCount: menus!.length,
+                    itemBuilder: (context, index) => MeloUINavItem(
+                        isActived: active == index,
+                        icon: menus![index].icon,
+                        name: menus![index].name,
+                        onPressed: () {
+                          onNavigateTo!(index);
+                        }),
                   )),
         Expanded(
           flex: 1,

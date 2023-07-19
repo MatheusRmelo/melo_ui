@@ -5,7 +5,7 @@ export 'src/widgets/meloui_button.dart';
 export 'src/widgets/meloui_snackbar.dart';
 export 'src/widgets/meloui_card.dart';
 export 'src/widgets/meloui_dropdown.dart';
-export 'src/widgets/meloui_menu_item.dart';
+export 'src/widgets/meloui_nav_item.dart';
 export 'src/widgets/meloui_text.dart';
 export 'src/widgets/meloui_text_field.dart';
 export 'src/widgets/meloui_text_form_field.dart';
@@ -20,3 +20,5 @@ export 'src/pages/meloui_app_page.dart';
 /* UTILS */
 export 'src/utils/melo_ui_theme.dart';
 export 'src/utils/melo_ui_colors.dart';
+/* MODELS */
+export 'src/models/meloui_nav_item_model.dart';
