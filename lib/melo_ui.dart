@@ -14,6 +14,7 @@ export 'src/widgets/meloui_logo.dart';
 export 'src/widgets/meloui_table.dart';
 export 'src/widgets/containers/meloui_app_container.dart';
 export 'src/widgets/containers/meloui_table_container.dart';
+export 'src/widgets/containers/meloui_container.dart';
 /* PAGES */
 export 'src/pages/meloui_signin_page.dart';
 export 'src/pages/meloui_app_page.dart';
