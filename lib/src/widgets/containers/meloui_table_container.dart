@@ -23,12 +23,15 @@ class MeloUITableContainer extends StatelessWidget {
           child: Row(children: [
             Expanded(
               flex: 1,
-              child: Row(children: filters),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: filters),
             ),
             const Spacer(flex: 4),
             Expanded(
               flex: 1,
-              child: Row(children: actions),
+              child: Row(
+                  mainAxisAlignment: MainAxisAlignment.end, children: actions),
             ),
           ]),
         ),

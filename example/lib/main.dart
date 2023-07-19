@@ -1,4 +1,5 @@
 import 'package:example/app_page.dart';
+import 'package:example/signin_page.dart';
 import 'package:flutter/material.dart';
 import 'package:melo_ui/melo_ui.dart';
 
@@ -14,7 +15,7 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       title: 'Flutter Demo',
       theme: MeloUITheme.generateTheme(),
-      home: AppPage(),
+      home: SignInPage(),
     );
   }
 }

@@ -16,12 +16,7 @@ class AppPage extends StatelessWidget {
         DataColumn(label: Text("Receive QTD")),
         DataColumn(label: Text("Data")),
       ], rows: [])),
-      menus: [
-        MeloUINavItem(
-            icon: Icons.verified_user,
-            name: 'Usuários verificados',
-            onPressed: () {})
-      ],
+      menus: [],
       actions: [MeloUIButton(title: 'Sair', onPressed: () {})],
       logo: MeloUILogo(
         child: SvgPicture.asset('assets/login_banner.svg'),

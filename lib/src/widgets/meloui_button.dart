@@ -32,7 +32,7 @@ class MeloUIButton extends StatelessWidget {
           style: ElevatedButton.styleFrom(
               disabledMouseCursor: SystemMouseCursors.forbidden,
               shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(8))),
+                  borderRadius: BorderRadius.circular(16))),
           child: isLoading
               ? Row(
                   mainAxisAlignment: MainAxisAlignment.center,

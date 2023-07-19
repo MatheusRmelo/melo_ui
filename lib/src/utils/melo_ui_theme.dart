@@ -42,7 +42,7 @@ class MeloUITheme {
                 backgroundColor: colors.highlight,
                 disabledMouseCursor: SystemMouseCursors.forbidden,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(8)))),
+                    borderRadius: BorderRadius.circular(16)))),
         textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
           foregroundColor: colors.highlight,
