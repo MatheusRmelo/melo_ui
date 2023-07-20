@@ -12,6 +12,7 @@ export 'src/widgets/meloui_text_form_field.dart';
 export 'src/widgets/meloui_textarea.dart';
 export 'src/widgets/meloui_logo.dart';
 export 'src/widgets/meloui_table.dart';
+export 'src/widgets/meloui_tag.dart';
 export 'src/widgets/containers/meloui_app_container.dart';
 export 'src/widgets/containers/meloui_table_container.dart';
 export 'src/widgets/containers/meloui_container.dart';
