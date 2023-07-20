@@ -16,6 +16,8 @@ export 'src/widgets/meloui_tag.dart';
 export 'src/widgets/containers/meloui_app_container.dart';
 export 'src/widgets/containers/meloui_table_container.dart';
 export 'src/widgets/containers/meloui_container.dart';
+/* DIALOGS */
+export 'src/dialogs/delete_dialog.dart';
 /* PAGES */
 export 'src/pages/meloui_signin_page.dart';
 export 'src/pages/meloui_app_page.dart';

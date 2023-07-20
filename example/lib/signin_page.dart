@@ -11,7 +11,9 @@ class SignInPage extends StatelessWidget {
       subTitle: 'Teste subtitulo',
       errors: {},
       isBusy: false,
-      onSubmit: (email, password) => {},
+      onSubmit: (email, password) {
+        meloUIDeleteDialog(context, question: 'teste', title: 'teste');
+      },
     );
   }
 }
