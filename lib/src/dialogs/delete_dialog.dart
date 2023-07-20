@@ -13,17 +13,23 @@ Future<bool?> meloUIDeleteDialog(BuildContext context,
             borderRadius: BorderRadius.all(Radius.circular(16))),
         title: Row(children: [
           const Spacer(),
-          IconButton(onPressed: () {}, icon: const Icon(Icons.close))
+          IconButton(
+              onPressed: () {
+                Navigator.pop(context);
+              },
+              icon: const Icon(Icons.close))
         ]),
         content: SizedBox(
           width: 300,
           child: Column(mainAxisSize: MainAxisSize.min, children: [
             MeloUIText(
               title,
+              textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
             MeloUIText(
               question,
+              textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 16),
             ),
           ]),
