@@ -27,6 +27,9 @@ Future<bool?> meloUIDeleteDialog(BuildContext context,
               textAlign: TextAlign.center,
               style: const TextStyle(fontSize: 24, fontWeight: FontWeight.bold),
             ),
+            const SizedBox(
+              height: 16,
+            ),
             MeloUIText(
               question,
               textAlign: TextAlign.center,
