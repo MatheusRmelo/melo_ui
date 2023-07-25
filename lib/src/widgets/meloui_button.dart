@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:melo_ui/melo_ui.dart';
 
 class MeloUIButton extends StatelessWidget {
   const MeloUIButton(

@@ -5,7 +5,7 @@ class MeloUIDropdown extends StatelessWidget {
   final String value;
   final List<String> list;
   final bool hasError;
-
+  final Color? labelColor;
   final Function(String? value) onChanged;
 
   const MeloUIDropdown(
@@ -14,6 +14,7 @@ class MeloUIDropdown extends StatelessWidget {
       required this.list,
       required this.onChanged,
       required this.value,
+      this.labelColor,
       this.hasError = false});
 
   @override
@@ -25,7 +26,10 @@ class MeloUIDropdown extends StatelessWidget {
           label,
           style: TextStyle(
               fontSize: 16,
-              color: Theme.of(context).hintColor,
+              color: labelColor ??
+                  (Theme.of(context).brightness == Brightness.light
+                      ? Colors.black
+                      : Colors.white),
               fontWeight: FontWeight.bold),
         ),
         Container(

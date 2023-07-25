@@ -14,6 +14,7 @@ class MeloUITextField extends StatefulWidget {
       this.readOnly = false,
       this.isButton = false,
       this.capitalization = TextCapitalization.sentences,
+      this.keyboardType = TextInputType.text,
       this.prefixIcon,
       this.suffixIcon,
       this.formatters,
@@ -36,6 +37,7 @@ class MeloUITextField extends StatefulWidget {
   final Widget? prefixIcon;
   final Widget? suffixIcon;
   final List<TextInputFormatter>? formatters;
+  final TextInputType keyboardType;
   final Function(String? value)? onChanged;
   final Function()? onPressed;
   @override
@@ -96,6 +98,7 @@ class _MeloUITextFieldState extends State<MeloUITextField> {
                   child: TextField(
                     controller: widget.controller,
                     obscureText: !widget.isPassword ? false : _showPassword,
+                    keyboardType: widget.keyboardType,
                     inputFormatters: widget.formatters,
                     onChanged: widget.onChanged,
                     readOnly: widget.readOnly,
