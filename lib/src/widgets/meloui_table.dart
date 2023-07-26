@@ -1,24 +1,89 @@
 import 'package:flutter/material.dart';
+import 'package:melo_ui/melo_ui.dart';
 
 class MeloUITable extends StatelessWidget {
-  const MeloUITable({super.key, required this.columns, required this.rows});
+  const MeloUITable({
+    super.key,
+    required this.columns,
+    required this.rows,
+    required this.title,
+    required this.currentPage,
+    required this.totalPages,
+    required this.nextPage,
+    required this.prevPage,
+    this.backgroundHeaderColor,
+    this.textHeaderColor,
+  });
   final List<DataColumn> columns;
   final List<DataRow> rows;
+  final String title;
+  final Color? backgroundHeaderColor;
+  final Color? textHeaderColor;
+  final int currentPage;
+  final int totalPages;
+  final VoidCallback nextPage;
+  final VoidCallback prevPage;
 
   @override
   Widget build(BuildContext context) {
     return Container(
       width: double.infinity,
       decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(16),
+        borderRadius: BorderRadius.circular(8),
         color: Theme.of(context).colorScheme.secondary,
       ),
-      child: DataTable(
-          border: TableBorder.all(
-              borderRadius: BorderRadius.circular(16),
-              color: Theme.of(context).colorScheme.secondary),
-          columns: columns,
-          rows: rows),
+      child: Column(
+        children: [
+          Container(
+            padding: const EdgeInsets.all(16),
+            decoration: BoxDecoration(
+              borderRadius: const BorderRadius.only(
+                  topLeft: Radius.circular(8), topRight: Radius.circular(8)),
+              color: backgroundHeaderColor ??
+                  Theme.of(context).colorScheme.primary.withOpacity(0.6),
+            ),
+            child:
+                Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
+              MeloUIText(title, color: textHeaderColor ?? Colors.white),
+              const Spacer(),
+              InkWell(
+                  onTap: prevPage,
+                  child: Icon(Icons.arrow_back_ios_rounded,
+                      color: textHeaderColor ?? Colors.white)),
+              Container(
+                  margin: const EdgeInsets.symmetric(horizontal: 8),
+                  child: MeloUIText("$currentPage/$totalPages",
+                      color: textHeaderColor ?? Colors.white)),
+              InkWell(
+                  onTap: nextPage,
+                  child: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    color: textHeaderColor ?? Colors.white,
+                  )),
+            ]),
+          ),
+          Expanded(
+            child: Container(
+              width: double.infinity,
+              child: DataTable(
+                  headingRowColor: MaterialStateProperty.all<Color>(
+                      Theme.of(context).colorScheme.primary.withOpacity(0.3)),
+                  headingRowHeight: 48,
+                  dataRowMaxHeight: 48,
+                  dataRowColor: MaterialStateProperty.all<Color>(
+                      Theme.of(context).colorScheme.secondary),
+                  border: TableBorder(
+                      horizontalInside: BorderSide(
+                          color: Theme.of(context)
+                              .colorScheme
+                              .primary
+                              .withOpacity(0.3))),
+                  columns: columns,
+                  rows: rows),
+            ),
+          ),
+        ],
+      ),
     );
   }
 }

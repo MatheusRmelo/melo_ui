@@ -36,7 +36,14 @@ class MeloUITableContainer extends StatelessWidget {
           ]),
         ),
         Expanded(
-          child: MeloUITable(columns: columns, rows: rows),
+          child: MeloUITable(
+              currentPage: 1,
+              totalPages: 1,
+              nextPage: () {},
+              prevPage: () {},
+              title: 'Título',
+              columns: columns,
+              rows: rows),
         )
       ],
     );

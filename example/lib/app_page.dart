@@ -15,7 +15,22 @@ class AppPage extends StatelessWidget {
         DataColumn(label: Text("Preço")),
         DataColumn(label: Text("Receive QTD")),
         DataColumn(label: Text("Data")),
-      ], rows: [])),
+      ], rows: [
+        DataRow(cells: [
+          DataCell(Text('teste')),
+          DataCell(Text('teste')),
+          DataCell(Text('teste')),
+          DataCell(Text('teste')),
+          DataCell(Text('teste'))
+        ]),
+        DataRow(cells: [
+          DataCell(Text('teste')),
+          DataCell(Text('teste')),
+          DataCell(Text('teste')),
+          DataCell(Text('teste')),
+          DataCell(Text('teste'))
+        ])
+      ])),
       menus: [],
       actions: [MeloUIButton(title: 'Sair', onPressed: () {})],
       logo: MeloUILogo(
