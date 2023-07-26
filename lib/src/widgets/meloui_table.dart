@@ -6,17 +6,17 @@ class MeloUITable extends StatelessWidget {
     super.key,
     required this.columns,
     required this.rows,
-    required this.title,
     required this.currentPage,
     required this.totalPages,
     required this.nextPage,
     required this.prevPage,
+    this.title,
     this.backgroundHeaderColor,
     this.textHeaderColor,
   });
   final List<DataColumn> columns;
   final List<DataRow> rows;
-  final String title;
+  final String? title;
   final Color? backgroundHeaderColor;
   final Color? textHeaderColor;
   final int currentPage;
@@ -44,7 +44,8 @@ class MeloUITable extends StatelessWidget {
             ),
             child:
                 Row(crossAxisAlignment: CrossAxisAlignment.center, children: [
-              MeloUIText(title, color: textHeaderColor ?? Colors.white),
+              if (title != null)
+                MeloUIText(title!, color: textHeaderColor ?? Colors.white),
               const Spacer(),
               InkWell(
                   onTap: prevPage,
@@ -67,17 +68,11 @@ class MeloUITable extends StatelessWidget {
               width: double.infinity,
               child: DataTable(
                   headingRowColor: MaterialStateProperty.all<Color>(
-                      Theme.of(context).colorScheme.primary.withOpacity(0.3)),
+                      Theme.of(context).colorScheme.primary.withOpacity(0.1)),
                   headingRowHeight: 48,
                   dataRowMaxHeight: 48,
                   dataRowColor: MaterialStateProperty.all<Color>(
                       Theme.of(context).colorScheme.secondary),
-                  border: TableBorder(
-                      horizontalInside: BorderSide(
-                          color: Theme.of(context)
-                              .colorScheme
-                              .primary
-                              .withOpacity(0.3))),
                   columns: columns,
                   rows: rows),
             ),
