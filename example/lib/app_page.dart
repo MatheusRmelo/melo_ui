@@ -8,30 +8,39 @@ class AppPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MeloUIAppPage(
-      body: const MeloUIAppContainer(
-          child: MeloUITableContainer(filters: [], actions: [], columns: [
-        DataColumn(label: Text("Número de rastreio")),
-        DataColumn(label: Text("Nome do produto")),
-        DataColumn(label: Text("Preço")),
-        DataColumn(label: Text("Receive QTD")),
-        DataColumn(label: Text("Data")),
-      ], rows: [
-        DataRow(cells: [
-          DataCell(Text('teste')),
-          DataCell(Text('teste')),
-          DataCell(Text('teste')),
-          DataCell(Text('teste')),
-          DataCell(Text('teste'))
-        ]),
-        DataRow(cells: [
-          DataCell(Text('teste')),
-          DataCell(Text('teste')),
-          DataCell(Text('teste')),
-          DataCell(Text('teste')),
-          DataCell(Text('teste'))
-        ])
-      ])),
-      menus: [],
+      body: MeloUIAppContainer(
+          child: MeloUITableContainer(
+              currentPage: 1,
+              totalPages: 1,
+              nextPage: () {},
+              prevPage: () {},
+              tableTitle: 'Título',
+              filters: const [],
+              actions: const [],
+              columns: const [
+            DataColumn(label: Text("Número de rastreio")),
+            DataColumn(label: Text("Nome do produto")),
+            DataColumn(label: Text("Preço")),
+            DataColumn(label: Text("Receive QTD")),
+            DataColumn(label: Text("Data")),
+          ],
+              rows: const [
+            DataRow(cells: [
+              DataCell(Text('teste')),
+              DataCell(Text('teste')),
+              DataCell(Text('teste')),
+              DataCell(Text('teste')),
+              DataCell(Text('teste'))
+            ]),
+            DataRow(cells: [
+              DataCell(Text('teste')),
+              DataCell(Text('teste')),
+              DataCell(Text('teste')),
+              DataCell(Text('teste')),
+              DataCell(Text('teste'))
+            ])
+          ])),
+      menus: const [],
       actions: [MeloUIButton(title: 'Sair', onPressed: () {})],
       logo: MeloUILogo(
         child: SvgPicture.asset('assets/login_banner.svg'),
