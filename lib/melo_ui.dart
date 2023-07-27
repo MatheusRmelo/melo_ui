@@ -26,3 +26,6 @@ export 'src/utils/melo_ui_theme.dart';
 export 'src/utils/melo_ui_colors.dart';
 /* MODELS */
 export 'src/models/meloui_nav_item_model.dart';
+export 'src/models/meloui_http_error_field_model.dart';
+/* EXTENSIONS */
+export 'src/extensions/http_error_field_extension.dart';
