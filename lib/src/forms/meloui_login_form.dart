@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:melo_ui/src/extensions/http_error_field_extension.dart';
+import 'package:melo_ui/src/models/meloui_http_error_field_model.dart';
 import 'package:melo_ui/src/widgets/meloui_button.dart';
 import 'package:melo_ui/src/widgets/meloui_text.dart';
 import 'package:melo_ui/src/widgets/meloui_text_field.dart';
@@ -22,7 +24,7 @@ class MeloUILoginForm extends StatelessWidget {
   final bool isBusy;
   final TextEditingController emailController;
   final TextEditingController passwordController;
-  final Map<String, List<String>> errors;
+  final List<MeloUIHttpErrorFieldModel> errors;
   final Function onRefresh;
   final void Function() onSubmit;
 
@@ -46,8 +48,7 @@ class MeloUILoginForm extends StatelessWidget {
       MeloUITextField(
         label: 'E-mail',
         placeholder: 'Digite o seu e-mail',
-        error:
-            errors['email'] != null ? (errors['email']!.first as String) : null,
+        error: errors.getFirstErrorByKey('email'),
         controller: emailController,
         onChanged: (String? value) {
           onRefresh();
@@ -57,10 +58,8 @@ class MeloUILoginForm extends StatelessWidget {
         label: 'Senha',
         placeholder: 'Digite a sua senha',
         isPassword: true,
-        error: errors['password'] != null
-            ? (errors['password']!.first as String)
-                .replaceAll('password', 'senha')
-            : null,
+        error:
+            errors.getFirstErrorByKey('email').replaceAll('password', 'senha'),
         controller: passwordController,
         onChanged: (String? value) {
           onRefresh();

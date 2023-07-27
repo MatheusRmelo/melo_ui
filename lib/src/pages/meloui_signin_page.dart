@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:melo_ui/src/forms/meloui_login_form.dart';
+import 'package:melo_ui/src/models/meloui_http_error_field_model.dart';
 
 class MeloUISignPage extends StatefulWidget {
   const MeloUISignPage(
@@ -17,7 +18,7 @@ class MeloUISignPage extends StatefulWidget {
   final String title;
   final String subTitle;
   final bool isBusy;
-  final Map<String, List<String>> errors;
+  final List<MeloUIHttpErrorFieldModel> errors;
   final void Function(String email, String password) onSubmit;
   @override
   State<MeloUISignPage> createState() => _MeloUISignPageState();
