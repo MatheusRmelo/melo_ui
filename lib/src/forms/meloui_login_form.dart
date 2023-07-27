@@ -58,8 +58,9 @@ class MeloUILoginForm extends StatelessWidget {
         label: 'Senha',
         placeholder: 'Digite a sua senha',
         isPassword: true,
-        error:
-            errors.getFirstErrorByKey('email').replaceAll('password', 'senha'),
+        error: errors
+            .getFirstErrorByKey('password')
+            ?.replaceAll('password', 'senha'),
         controller: passwordController,
         onChanged: (String? value) {
           onRefresh();
