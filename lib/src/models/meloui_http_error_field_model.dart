@@ -6,5 +6,5 @@ class MeloUIHttpErrorFieldModel {
 
   MeloUIHttpErrorFieldModel.fromJson(Map<String, dynamic> json)
       : key = json['key'],
-        errors = json['errors'];
+        errors = (json['errors'] as List).map((e) => e.toString()).toList();
 }
