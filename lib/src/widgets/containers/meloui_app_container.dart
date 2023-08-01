@@ -26,7 +26,7 @@ class MeloUIAppContainer extends StatelessWidget {
             Spacer(
               flex: 2,
             ),
-            Expanded(child: Align(child: Text('PROFILE')))
+            //Expanded(child: Align(child: Text('PROFILE')))
           ],
         ),
         Expanded(child: child)

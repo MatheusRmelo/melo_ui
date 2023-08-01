@@ -8,6 +8,7 @@ class AppPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MeloUIAppPage(
+      title: 'Test',
       body: MeloUIAppContainer(
           child: MeloUITableContainer(
               currentPage: 1,
@@ -40,7 +41,7 @@ class AppPage extends StatelessWidget {
               DataCell(Text('teste'))
             ])
           ])),
-      menus: const [],
+      menus: [MeloUINavItemModel(icon: Icons.dangerous, name: 'Perigo')],
       actions: [MeloUIButton(title: 'Sair', onPressed: () {})],
       logo: MeloUILogo(
         child: SvgPicture.asset('assets/login_banner.svg'),

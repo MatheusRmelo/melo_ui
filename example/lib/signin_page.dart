@@ -9,7 +9,7 @@ class SignInPage extends StatelessWidget {
     return MeloUISignPage(
       title: 'Teste título',
       subTitle: 'Teste subtitulo',
-      errors: {},
+      errors: const [],
       isBusy: false,
       onSubmit: (email, password) {
         meloUIDeleteDialog(context, question: 'teste', title: 'teste');
