@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:melo_ui/melo_ui.dart';
-import 'package:melo_ui/src/models/meloui_nav_item_model.dart';
 
 class MeloUISidebar extends StatelessWidget {
   const MeloUISidebar({
