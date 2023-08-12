@@ -21,6 +21,7 @@ export 'src/dialogs/delete_dialog.dart';
 /* PAGES */
 export 'src/pages/meloui_signin_page.dart';
 export 'src/pages/meloui_app_page.dart';
+export 'src/pages/meloui_auth_page.dart';
 /* UTILS */
 export 'src/utils/melo_ui_theme.dart';
 export 'src/utils/melo_ui_colors.dart';

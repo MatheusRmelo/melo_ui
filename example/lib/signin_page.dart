@@ -6,10 +6,12 @@ class SignInPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return MeloUISignPage(
+    return MeloUIAuthPage(
       title: 'Teste título',
       subTitle: 'Teste subtitulo',
-      errors: const [],
+      errors: [
+        MeloUIHttpErrorFieldModel(key: 'email', errors: ['invalid e-mail'])
+      ],
       isBusy: false,
       onSubmit: (email, password) {
         meloUIDeleteDialog(context, question: 'teste', title: 'teste');

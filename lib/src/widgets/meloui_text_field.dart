@@ -56,7 +56,7 @@ class _MeloUITextFieldState extends State<MeloUITextField> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: widget.margin,
+      margin: widget.margin ?? const EdgeInsets.symmetric(vertical: 8),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -93,35 +93,31 @@ class _MeloUITextFieldState extends State<MeloUITextField> {
                     ),
                   ),
                 )
-              : SizedBox(
-                  height: widget.error != null ? 72 : 64,
-                  child: TextField(
-                    controller: widget.controller,
-                    obscureText: !widget.isPassword ? false : _showPassword,
-                    keyboardType: widget.keyboardType,
-                    inputFormatters: widget.formatters,
-                    onChanged: widget.onChanged,
-                    readOnly: widget.readOnly,
-                    textCapitalization: widget.capitalization,
-                    decoration: InputDecoration(
-                        helperText: widget.helperText,
-                        errorText: widget.error,
-                        hintText: widget.placeholder,
-                        prefixIcon: widget.prefixIcon,
-                        suffixIcon: !widget.isPassword
-                            ? widget.suffixIcon
-                            : IconButton(
-                                onPressed: () {
-                                  setState(
-                                      () => _showPassword = !_showPassword);
-                                },
-                                icon: Icon(
-                                  _showPassword
-                                      ? Icons.visibility_off
-                                      : Icons.visibility,
-                                  color: Theme.of(context).primaryColorLight,
-                                ))),
-                  ),
+              : TextField(
+                  controller: widget.controller,
+                  obscureText: !widget.isPassword ? false : _showPassword,
+                  keyboardType: widget.keyboardType,
+                  inputFormatters: widget.formatters,
+                  onChanged: widget.onChanged,
+                  readOnly: widget.readOnly,
+                  textCapitalization: widget.capitalization,
+                  decoration: InputDecoration(
+                      helperText: widget.helperText,
+                      errorText: widget.error,
+                      hintText: widget.placeholder,
+                      prefixIcon: widget.prefixIcon,
+                      suffixIcon: !widget.isPassword
+                          ? widget.suffixIcon
+                          : IconButton(
+                              onPressed: () {
+                                setState(() => _showPassword = !_showPassword);
+                              },
+                              icon: Icon(
+                                _showPassword
+                                    ? Icons.visibility_off
+                                    : Icons.visibility,
+                                color: Theme.of(context).primaryColorLight,
+                              ))),
                 ),
           if (widget.observationText != null)
             Container(
