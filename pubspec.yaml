@@ -1,6 +1,6 @@
 name: melo_ui
 description:  Implements a Design System in Flutter from Melo Technology.
-version: 0.11.13
+version: 0.11.14
 homepage: https://www.melotechnology.com.br
 repository: https://github.com/matheusRmelo/melo_ui
 issue_tracker: https://github.com/matheusRmelo/melo_ui/issues
