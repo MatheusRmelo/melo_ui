@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
-import 'package:melo_ui/src/widgets/containers/meloui_table_container.dart';
-import 'package:melo_ui/src/widgets/meloui_button.dart';
 import 'package:melo_ui/src/widgets/meloui_text_field.dart';
 
 class MeloUIAppContainer extends StatefulWidget {
-  const MeloUIAppContainer({super.key, required this.child, this.onSearch});
+  const MeloUIAppContainer(
+      {super.key, required this.child, this.searchController, this.onSearch});
   final Widget child;
+  final TextEditingController? searchController;
   final void Function(String search)? onSearch;
 
   @override
@@ -13,7 +13,6 @@ class MeloUIAppContainer extends StatefulWidget {
 }
 
 class _MeloUIAppContainerState extends State<MeloUIAppContainer> {
-  TextEditingController searchController = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -27,12 +26,13 @@ class _MeloUIAppContainerState extends State<MeloUIAppContainer> {
               child: MeloUITextField(
                 label: 'Pesquise',
                 placeholder: 'Digite sua busca',
-                controller: searchController,
+                controller: widget.searchController,
                 suffixIcon: IconButton(
-                    onPressed: widget.onSearch == null
+                    onPressed: widget.onSearch == null &&
+                            widget.searchController == null
                         ? null
                         : () {
-                            widget.onSearch!(searchController.text);
+                            widget.onSearch!(widget.searchController!.text);
                           },
                     icon: const Icon(Icons.search_rounded)),
               ),
