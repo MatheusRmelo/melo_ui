@@ -64,17 +64,20 @@ class MeloUITable extends StatelessWidget {
             ]),
           ),
           Expanded(
-            child: Container(
+            child: SizedBox(
               width: double.infinity,
-              child: DataTable(
-                  headingRowColor: MaterialStateProperty.all<Color>(
-                      Theme.of(context).colorScheme.primary.withOpacity(0.1)),
-                  headingRowHeight: 48,
-                  dataRowMaxHeight: 48,
-                  dataRowColor: MaterialStateProperty.all<Color>(
-                      Theme.of(context).colorScheme.secondary),
-                  columns: columns,
-                  rows: rows),
+              height: double.infinity,
+              child: SingleChildScrollView(
+                child: DataTable(
+                    headingRowColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).colorScheme.primary.withOpacity(0.1)),
+                    headingRowHeight: 48,
+                    dataRowMaxHeight: 48,
+                    dataRowColor: MaterialStateProperty.all<Color>(
+                        Theme.of(context).colorScheme.secondary),
+                    columns: columns,
+                    rows: rows),
+              ),
             ),
           ),
         ],
