@@ -65,6 +65,8 @@ class _MeloUIAuthPageState extends State<MeloUIAuthPage> {
                           placeholder: 'Digite o seu e-mail',
                           error: widget.errors.getFirstErrorByKey('email'),
                           controller: _emailController,
+                          isDense: true,
+                          contentPadding: EdgeInsets.all(16),
                           onChanged: (String? value) {
                             setState(() {});
                           },
@@ -76,6 +78,8 @@ class _MeloUIAuthPageState extends State<MeloUIAuthPage> {
                           error: widget.errors
                               .getFirstErrorByKey('password')
                               ?.replaceAll('password', 'senha'),
+                          isDense: true,
+                          contentPadding: EdgeInsets.all(16),
                           controller: _passwordController,
                           onChanged: (String? value) {
                             setState(() {});

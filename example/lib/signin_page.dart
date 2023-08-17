@@ -9,9 +9,7 @@ class SignInPage extends StatelessWidget {
     return MeloUIAuthPage(
       title: 'Teste título',
       subTitle: 'Teste subtitulo',
-      errors: [
-        MeloUIHttpErrorFieldModel(key: 'email', errors: ['invalid e-mail'])
-      ],
+      errors: [],
       isBusy: false,
       onSubmit: (email, password) {
         meloUIDeleteDialog(context, question: 'teste', title: 'teste');

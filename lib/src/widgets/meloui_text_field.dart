@@ -21,6 +21,8 @@ class MeloUITextField extends StatefulWidget {
       this.onChanged,
       this.onPressed,
       this.error,
+      this.isDense,
+      this.contentPadding,
       this.controller});
   final double height;
   final String label;
@@ -40,6 +42,8 @@ class MeloUITextField extends StatefulWidget {
   final TextInputType keyboardType;
   final Function(String? value)? onChanged;
   final Function()? onPressed;
+  final bool? isDense;
+  final EdgeInsets? contentPadding;
   @override
   State<MeloUITextField> createState() => _MeloUITextFieldState();
 }
@@ -102,6 +106,8 @@ class _MeloUITextFieldState extends State<MeloUITextField> {
                   readOnly: widget.readOnly,
                   textCapitalization: widget.capitalization,
                   decoration: InputDecoration(
+                      isDense: widget.isDense,
+                      contentPadding: widget.contentPadding,
                       helperText: widget.helperText,
                       errorText: widget.error,
                       hintText: widget.placeholder,
