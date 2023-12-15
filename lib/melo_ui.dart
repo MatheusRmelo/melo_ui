@@ -14,6 +14,8 @@ export 'src/widgets/meloui_logo.dart';
 export 'src/widgets/meloui_table.dart';
 export 'src/widgets/meloui_tag.dart';
 export 'src/widgets/meloui_sidebar.dart';
+export 'src/widgets/v2/meloui_sidebar_v2.dart';
+export 'src/widgets/v2/meloui_navbar_v2.dart';
 export 'src/widgets/containers/meloui_app_container.dart';
 export 'src/widgets/containers/meloui_table_container.dart';
 export 'src/widgets/containers/meloui_container.dart';
@@ -31,3 +33,4 @@ export 'src/models/meloui_nav_item_model.dart';
 export 'src/models/meloui_http_error_field_model.dart';
 /* EXTENSIONS */
 export 'src/extensions/http_error_field_extension.dart';
+export 'src/extensions/context_extension.dart';
