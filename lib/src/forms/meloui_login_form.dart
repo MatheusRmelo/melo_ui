@@ -3,7 +3,7 @@ import 'package:melo_ui/src/extensions/http_error_field_extension.dart';
 import 'package:melo_ui/src/models/meloui_http_error_field_model.dart';
 import 'package:melo_ui/src/widgets/meloui_button.dart';
 import 'package:melo_ui/src/widgets/meloui_text.dart';
-import 'package:melo_ui/src/widgets/meloui_text_field.dart';
+import 'package:melo_ui/src/widgets/form_fields/meloui_text_field.dart';
 
 class MeloUILoginForm extends StatelessWidget {
   const MeloUILoginForm(

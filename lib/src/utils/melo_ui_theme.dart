@@ -13,10 +13,10 @@ class MeloUITheme {
           error: colors.error,
           onBackground: colors.dominant,
           onError: colors.error,
-          onPrimary: colors.highlight,
+          onPrimary: colors.onHighlight,
           onSecondary: colors.secondary,
-          onSurface: colors.highlight,
-          primary: colors.highlight,
+          onSurface: colors.onHighlight,
+          primary: colors.onHighlight,
           secondary: colors.secondary,
           surface: colors.highlight,
         ),
@@ -45,7 +45,7 @@ class MeloUITheme {
                     borderRadius: BorderRadius.circular(16)))),
         textButtonTheme: TextButtonThemeData(
             style: TextButton.styleFrom(
-          foregroundColor: colors.highlight,
+          foregroundColor: colors.onHighlight,
         )));
   }
 }

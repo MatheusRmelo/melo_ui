@@ -7,8 +7,7 @@ export 'src/widgets/meloui_card.dart';
 export 'src/widgets/meloui_dropdown.dart';
 export 'src/widgets/meloui_nav_item.dart';
 export 'src/widgets/meloui_text.dart';
-export 'src/widgets/meloui_text_field.dart';
-export 'src/widgets/meloui_text_form_field.dart';
+
 export 'src/widgets/meloui_textarea.dart';
 export 'src/widgets/meloui_logo.dart';
 export 'src/widgets/meloui_table.dart';
@@ -19,6 +18,11 @@ export 'src/widgets/v2/meloui_navbar_v2.dart';
 export 'src/widgets/containers/meloui_app_container.dart';
 export 'src/widgets/containers/meloui_table_container.dart';
 export 'src/widgets/containers/meloui_container.dart';
+/* FIELDS */
+export 'src/widgets/form_fields/meloui_text_field.dart';
+export 'src/widgets/form_fields/meloui_text_form_field.dart';
+export 'src/widgets/form_fields/meloui_hour_field.dart';
+export 'src/widgets/form_fields/meloui_date_field.dart';
 /* DIALOGS */
 export 'src/dialogs/delete_dialog.dart';
 /* PAGES */
