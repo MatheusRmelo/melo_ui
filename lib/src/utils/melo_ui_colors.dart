@@ -11,12 +11,14 @@ class MeloUIColors {
   final Color success;
   final Color border;
   final Color disabled;
+  final Color onHighlight;
 
   MeloUIColors({
     this.dominant = const Color(0xFFF1F1F1),
     this.secondary = const Color(0xFFFFFFFF),
     this.error = const Color(0xFF9C1616),
     this.highlight = const Color(0xFFB99A28),
+    this.onHighlight = Colors.white,
     this.textNormal = Colors.black,
     this.textLight = Colors.white,
     this.textSubTitle = Colors.grey,
