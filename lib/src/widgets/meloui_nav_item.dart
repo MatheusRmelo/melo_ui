@@ -48,7 +48,7 @@ class _MeloUINavItemState extends State<MeloUINavItem> {
                   child: Icon(
                     widget.icon,
                     color: widget.isActived || _isMouseOver
-                        ? Theme.of(context).primaryColorLight
+                        ? Theme.of(context).primaryColor
                         : Theme.of(context).hintColor,
                   ),
                 ),
@@ -56,7 +56,7 @@ class _MeloUINavItemState extends State<MeloUINavItem> {
                     child: Text(widget.name,
                         style: TextStyle(
                             color: widget.isActived || _isMouseOver
-                                ? Theme.of(context).primaryColorLight
+                                ? Theme.of(context).primaryColor
                                 : Theme.of(context).hintColor,
                             fontSize: 16)))
               ]),
