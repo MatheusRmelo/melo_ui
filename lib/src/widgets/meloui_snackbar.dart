@@ -11,7 +11,7 @@ class MeloUIErrorSnackbar extends SnackBar {
           backgroundColor: Theme.of(context).colorScheme.error,
           action: SnackBarAction(
             label: 'FECHAR',
-            textColor: Theme.of(context).primaryColorLight,
+            textColor: Theme.of(context).primaryColor,
             onPressed: () {},
           ),
         );
@@ -28,7 +28,7 @@ class MeloUISuccessSnackbar extends SnackBar {
           backgroundColor: Colors.green,
           action: SnackBarAction(
             label: 'FECHAR',
-            textColor: Theme.of(context).primaryColorLight,
+            textColor: Theme.of(context).primaryColor,
             onPressed: () {},
           ),
         );

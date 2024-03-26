@@ -7,9 +7,10 @@ class MeloUITheme {
     colors = colors ?? MeloUIColors();
     return ThemeData(
       primaryColor: colors.highlight,
-      colorScheme: ThemeData()
-          .colorScheme
-          .copyWith(primary: colors.highlight, secondary: colors.secondary),
+      colorScheme: ThemeData().colorScheme.copyWith(
+            primary: colors.highlight,
+            secondary: colors.secondary,
+          ),
       appBarTheme: AppBarTheme(backgroundColor: colors.dominant),
       scaffoldBackgroundColor: colors.dominant,
       inputDecorationTheme: InputDecorationTheme(

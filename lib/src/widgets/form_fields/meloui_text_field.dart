@@ -122,7 +122,7 @@ class _MeloUITextFieldState extends State<MeloUITextField> {
                                 _showPassword
                                     ? Icons.visibility_off
                                     : Icons.visibility,
-                                color: Theme.of(context).primaryColorLight,
+                                color: Theme.of(context).primaryColor,
                               ))),
                 ),
           if (widget.observationText != null)

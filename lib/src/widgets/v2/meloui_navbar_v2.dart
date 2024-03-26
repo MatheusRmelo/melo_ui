@@ -43,7 +43,7 @@ class _MeloUINavItemV2State extends State<MeloUINavItemV2> {
               child: Container(
                 width: 8,
                 decoration: BoxDecoration(
-                    color: Theme.of(context).primaryColorLight,
+                    color: Theme.of(context).primaryColor,
                     borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(16),
                         bottomLeft: Radius.circular(16))),
@@ -65,7 +65,7 @@ class _MeloUINavItemV2State extends State<MeloUINavItemV2> {
                   Icon(
                     widget.icon,
                     color: widget.isActived || _isMouseOver
-                        ? Theme.of(context).primaryColorLight
+                        ? Theme.of(context).primaryColor
                         : Theme.of(context).hintColor,
                     size: context.height * 0.04,
                   ),
@@ -73,7 +73,7 @@ class _MeloUINavItemV2State extends State<MeloUINavItemV2> {
                   Text(widget.name,
                       style: TextStyle(
                           color: widget.isActived || _isMouseOver
-                              ? Theme.of(context).primaryColorLight
+                              ? Theme.of(context).primaryColor
                               : Theme.of(context).hintColor,
                           fontSize: 16))
                 ]),

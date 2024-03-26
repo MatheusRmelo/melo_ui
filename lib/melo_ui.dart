@@ -25,6 +25,7 @@ export 'src/widgets/form_fields/meloui_hour_field.dart';
 export 'src/widgets/form_fields/meloui_date_field.dart';
 /* DIALOGS */
 export 'src/dialogs/delete_dialog.dart';
+export 'src/dialogs/delete_dialog_widget.dart';
 /* PAGES */
 export 'src/pages/meloui_signin_page.dart';
 export 'src/pages/meloui_app_page.dart';
