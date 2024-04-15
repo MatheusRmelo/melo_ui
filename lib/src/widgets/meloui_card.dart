@@ -6,11 +6,17 @@ class MeloUICard extends StatelessWidget {
       required this.child,
       this.width = 600,
       this.height = 600,
+      this.border,
+      this.borderRadius,
+      this.backgroundColor,
       this.padding = const EdgeInsets.all(24)});
   final Widget child;
   final double width;
   final double height;
+  final BoxBorder? border;
   final EdgeInsets padding;
+  final Color? backgroundColor;
+  final BorderRadiusGeometry? borderRadius;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -18,8 +24,9 @@ class MeloUICard extends StatelessWidget {
         height: height,
         padding: padding,
         decoration: BoxDecoration(
-            color: Theme.of(context).colorScheme.secondary,
-            borderRadius: BorderRadius.circular(16)),
+            color: backgroundColor ?? Theme.of(context).colorScheme.secondary,
+            border: border,
+            borderRadius: borderRadius ?? BorderRadius.circular(16)),
         child: child);
   }
 }
