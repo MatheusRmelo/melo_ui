@@ -22,6 +22,7 @@ class MeloUIHourField extends StatelessWidget {
       this.error,
       this.isDense,
       this.contentPadding,
+      this.mainAxisAlignment,
       required this.controller})
       : initialTime = initialTime ?? TimeOfDay.now();
   final double height;
@@ -30,6 +31,7 @@ class MeloUIHourField extends StatelessWidget {
   final String? helperText;
   final String? observationText;
   final EdgeInsets? margin;
+  final MainAxisAlignment? mainAxisAlignment;
   final TextEditingController controller;
   final bool readOnly;
   final TextCapitalization capitalization;
@@ -49,6 +51,7 @@ class MeloUIHourField extends StatelessWidget {
     return Container(
       margin: margin ?? const EdgeInsets.symmetric(vertical: 8),
       child: Column(
+        mainAxisAlignment: mainAxisAlignment ?? MainAxisAlignment.start,
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
